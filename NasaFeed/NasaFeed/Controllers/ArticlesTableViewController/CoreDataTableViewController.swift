@@ -1,104 +1,74 @@
 // Credits: https://github.com/5amfung/CoreDataTableViewController/blob/master/CoreDataTableViewController.swift
 
-import Foundation
 import UIKit
 import CoreData
 
 
-class CoreDataTableViewController : UITableViewController, NSFetchedResultsControllerDelegate {
+class CoreDataTableViewController<T: NSManagedObject>: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    // MARK: - Instance variables
-    
-    var fetchedResultsController: NSFetchedResultsController? {
-        didSet {
-            self.setUpFetchedResultsController()
-        }
+    init(style: UITableViewStyle, fetchedResultsController: NSFetchedResultsController<T>) {
+        self.fetchedResultsController = fetchedResultsController
+        super.init(style: style)
     }
+    
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let fetchedResultsController: NSFetchedResultsController<T>
     
     // MARK: - Fetching
     
     func performFetch() {
-        var error: NSError?
-        self.fetchedResultsController!.performFetch(&error)
-        if let err = error {
-            NSLog("%@", err.localizedDescription)
-        }
+        try! self.fetchedResultsController.performFetch()
         self.tableView.reloadData()
     }
     
     // MARK: - UITableViewDataSource
     
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-        return self.fetchedResultsController!.sections.count
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return self.fetchedResultsController.sections?.count ?? 0
     }
     
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        var rows = 0
-        if self.fetchedResultsController!.sections.count > 0 {
-            var sectionInfo = self.fetchedResultsController!.sections[section] as NSFetchedResultsSectionInfo
-            rows = sectionInfo.numberOfObjects
-        }
-        return rows
-    }
-    
-    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
-        let sectionInfo = self.fetchedResultsController!.sections[section] as NSFetchedResultsSectionInfo
-        return sectionInfo.name
-    }
-    
-    override func tableView(tableView: UITableView!, sectionForSectionIndexTitle title: String!, atIndex index: Int) -> Int {
-        return self.fetchedResultsController!.sectionForSectionIndexTitle(title, atIndex: index)
-    }
-    
-    override func sectionIndexTitlesForTableView(tableView: UITableView!) -> [AnyObject]! {
-        return self.fetchedResultsController!.sectionIndexTitles
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let sections = self.fetchedResultsController.sections else { return 0 }
+        return sections.reduce(0) { $0 + $1.numberOfObjects }
     }
     
     // MARK: - NSFetchedResultsControllerDelegate
     
-    func controllerWillChangeContent(controller: NSFetchedResultsController!) {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>){
         self.tableView.beginUpdates()
     }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController!) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView.endUpdates()
     }
     
-    func controller(controller: NSFetchedResultsController!, didChangeSection sectionInfo: NSFetchedResultsSectionInfo!, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
-        let indexSet = NSIndexSet(index: sectionIndex)
+     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        
+        let indexSet = IndexSet(integer: sectionIndex)
         switch type {
-        case NSFetchedResultsChangeType.Insert:
-            self.tableView.insertSections(indexSet, withRowAnimation: UITableViewRowAnimation.Fade)
-        case NSFetchedResultsChangeType.Delete:
-            self.tableView.deleteSections(indexSet, withRowAnimation: UITableViewRowAnimation.Fade)
-        case NSFetchedResultsChangeType.Update:
-            break
-        case NSFetchedResultsChangeType.Move:
-            break
+        case .insert: self.tableView.insertSections(indexSet, with: .fade)
+        case .delete: self.tableView.deleteSections(indexSet, with: .fade)
+        default: break
         }
     }
     
-    func controller(controller: NSFetchedResultsController!, didChangeObject anObject: AnyObject!, atIndexPath indexPath: NSIndexPath!, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath!) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?){
+        
         switch type {
-        case NSFetchedResultsChangeType.Insert:
-            self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-        case NSFetchedResultsChangeType.Delete:
-            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-        case NSFetchedResultsChangeType.Update:
-            self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-        case NSFetchedResultsChangeType.Move:
-            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-            self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        case .insert:
+            self.tableView.insertRows(at: [newIndexPath!], with: .fade)
+        case .delete:
+            self.tableView.deleteRows(at: [indexPath!], with: .fade)
+        case .update:
+            self.tableView.reloadRows(at: [indexPath!], with: .fade)
+        case .move:
+            self.tableView.deleteRows(at: [indexPath!], with: .fade)
+            self.tableView.insertRows(at: [newIndexPath!], with: .fade)
         }
     }
-    
-    // MARK: - Private
-    
-    private func setUpFetchedResultsController() {
-        self.fetchedResultsController!.delegate = self
-        if self.title == nil && (self.navigationController == nil || self.navigationItem.title == nil) {
-            self.title = self.fetchedResultsController!.fetchRequest.entity.name
-        }
-        self.performFetch()
-    }
+
 }
