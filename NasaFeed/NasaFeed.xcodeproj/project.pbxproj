@@ -20,6 +20,10 @@
 		5A1C3CC81D99B21500DD68D9 /* ArticlesTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CC71D99B21500DD68D9 /* ArticlesTableViewControllerDelegate.swift */; };
 		5A1C3CCB1D99B32E00DD68D9 /* NasaFeed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CC91D99B32D00DD68D9 /* NasaFeed.xcdatamodeld */; };
 		5A1C3CCE1D99B4EA00DD68D9 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CCD1D99B4EA00DD68D9 /* NavigationController.swift */; };
+		5A1C3CD11D99B60C00DD68D9 /* Article+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CCF1D99B60C00DD68D9 /* Article+CoreDataClass.swift */; };
+		5A1C3CD21D99B60C00DD68D9 /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CD01D99B60C00DD68D9 /* Article+CoreDataProperties.swift */; };
+		5A1C3CD41D99B63A00DD68D9 /* NasaFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CD31D99B63A00DD68D9 /* NasaFeedStore.swift */; };
+		5A1C3CD61D99B6BC00DD68D9 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CD51D99B6BC00DD68D9 /* ModelManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		5A1C3CC71D99B21500DD68D9 /* ArticlesTableViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewControllerDelegate.swift; sourceTree = "<group>"; };
 		5A1C3CCA1D99B32E00DD68D9 /* NasaFeed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NasaFeed.xcdatamodel; sourceTree = "<group>"; };
 		5A1C3CCD1D99B4EA00DD68D9 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		5A1C3CCF1D99B60C00DD68D9 /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5A1C3CD01D99B60C00DD68D9 /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5A1C3CD31D99B63A00DD68D9 /* NasaFeedStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaFeedStore.swift; sourceTree = "<group>"; };
+		5A1C3CD51D99B6BC00DD68D9 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				5A1C3CB91D99AEC800DD68D9 /* CoreDataStore.swift */,
+				5A1C3CD31D99B63A00DD68D9 /* NasaFeedStore.swift */,
 				5A1C3CC91D99B32D00DD68D9 /* NasaFeed.xcdatamodeld */,
+				5A1C3CCF1D99B60C00DD68D9 /* Article+CoreDataClass.swift */,
+				5A1C3CD01D99B60C00DD68D9 /* Article+CoreDataProperties.swift */,
+				5A1C3CD51D99B6BC00DD68D9 /* ModelManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,9 +240,13 @@
 			files = (
 				5A1C3CBA1D99AEC800DD68D9 /* CoreDataStore.swift in Sources */,
 				5A1C3CB71D99AE0D00DD68D9 /* RootViewController.swift in Sources */,
+				5A1C3CD41D99B63A00DD68D9 /* NasaFeedStore.swift in Sources */,
+				5A1C3CD11D99B60C00DD68D9 /* Article+CoreDataClass.swift in Sources */,
 				5A1C3CC31D99B05C00DD68D9 /* ArticleViewController.swift in Sources */,
 				5A1C3CCE1D99B4EA00DD68D9 /* NavigationController.swift in Sources */,
+				5A1C3CD21D99B60C00DD68D9 /* Article+CoreDataProperties.swift in Sources */,
 				5A1C3CBF1D99B04E00DD68D9 /* ArticlesTableViewController.swift in Sources */,
+				5A1C3CD61D99B6BC00DD68D9 /* ModelManager.swift in Sources */,
 				5A1C3CCB1D99B32E00DD68D9 /* NasaFeed.xcdatamodeld in Sources */,
 				5A1C3CC61D99B15300DD68D9 /* UIView+AutoLayout.swift in Sources */,
 				5A1C3CC81D99B21500DD68D9 /* ArticlesTableViewControllerDelegate.swift in Sources */,
