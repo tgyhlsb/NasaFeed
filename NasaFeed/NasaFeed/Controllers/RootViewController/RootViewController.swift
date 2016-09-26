@@ -22,6 +22,13 @@ class RootViewController: UIViewController, ArticlesTableViewControllerDelegate 
     
     // MARK: - INTERNAL -
     
+    // MARK: ArticlesTableViewControllerDelegate
+    
+    internal func articlesTableViewController(_ controller: ArticlesTableViewController, didSelect article: Article) {
+        let destination = ArticleViewController(article: article)
+        self.navigationController?.pushViewController(destination, animated: true)
+    }
+    
     // MARK: - PRIVATE -
     
     private let model: ModelManager
@@ -32,7 +39,6 @@ class RootViewController: UIViewController, ArticlesTableViewControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.initializeArticlesViewController()
     }
     

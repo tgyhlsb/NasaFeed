@@ -42,4 +42,11 @@ class ArticlesTableViewController: CoreDataTableViewController<Article> {
         return cell
     }
     
+    // MARK: UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let article = self.fetchedResultsController.object(at: indexPath)
+        self.delegate?.articlesTableViewController(self, didSelect: article)
+    }
+    
 }

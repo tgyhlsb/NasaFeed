@@ -14,7 +14,7 @@ protocol ArticlesTableViewControllerDelegate {
     
     // MARK: Optional
     
-    func articlesTableViewController(_ controller: ArticlesTableViewController, didSelect article: AnyObject)
+    func articlesTableViewController(_ controller: ArticlesTableViewController, didSelect article: Article)
     
 }
 
@@ -22,6 +22,6 @@ extension ArticlesTableViewControllerDelegate {
     
     // MARK: Optional
     
-    func articlesTableViewController(_ controller: ArticlesTableViewController, didSelect article: AnyObject) {}
+    func articlesTableViewController(_ controller: ArticlesTableViewController, didSelect article: Article) {}
     
 }
