@@ -19,6 +19,7 @@
 		5A1C3CC61D99B15300DD68D9 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CC51D99B15300DD68D9 /* UIView+AutoLayout.swift */; };
 		5A1C3CC81D99B21500DD68D9 /* ArticlesTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CC71D99B21500DD68D9 /* ArticlesTableViewControllerDelegate.swift */; };
 		5A1C3CCB1D99B32E00DD68D9 /* NasaFeed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CC91D99B32D00DD68D9 /* NasaFeed.xcdatamodeld */; };
+		5A1C3CCE1D99B4EA00DD68D9 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CCD1D99B4EA00DD68D9 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5A1C3CC51D99B15300DD68D9 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		5A1C3CC71D99B21500DD68D9 /* ArticlesTableViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewControllerDelegate.swift; sourceTree = "<group>"; };
 		5A1C3CCA1D99B32E00DD68D9 /* NasaFeed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NasaFeed.xcdatamodel; sourceTree = "<group>"; };
+		5A1C3CCD1D99B4EA00DD68D9 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		5A1C3CAA1D99ADA100DD68D9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5A1C3CCC1D99B4DB00DD68D9 /* NavigationController */,
 				5A1C3CB41D99ADFA00DD68D9 /* RootViewController */,
 				5A1C3CBB1D99B03A00DD68D9 /* ArticlesTableViewController */,
 				5A1C3CBC1D99B03A00DD68D9 /* ArticleViewController */,
@@ -139,6 +142,14 @@
 				5A1C3CC21D99B05C00DD68D9 /* ArticleViewController.xib */,
 			);
 			path = ArticleViewController;
+			sourceTree = "<group>";
+		};
+		5A1C3CCC1D99B4DB00DD68D9 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C3CCD1D99B4EA00DD68D9 /* NavigationController.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +229,7 @@
 				5A1C3CBA1D99AEC800DD68D9 /* CoreDataStore.swift in Sources */,
 				5A1C3CB71D99AE0D00DD68D9 /* RootViewController.swift in Sources */,
 				5A1C3CC31D99B05C00DD68D9 /* ArticleViewController.swift in Sources */,
+				5A1C3CCE1D99B4EA00DD68D9 /* NavigationController.swift in Sources */,
 				5A1C3CBF1D99B04E00DD68D9 /* ArticlesTableViewController.swift in Sources */,
 				5A1C3CCB1D99B32E00DD68D9 /* NasaFeed.xcdatamodeld in Sources */,
 				5A1C3CC61D99B15300DD68D9 /* UIView+AutoLayout.swift in Sources */,
