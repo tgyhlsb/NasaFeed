@@ -17,6 +17,7 @@
 		5A1C3CC01D99B04E00DD68D9 /* ArticlesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C3CBE1D99B04E00DD68D9 /* ArticlesTableViewController.xib */; };
 		5A1C3CC31D99B05C00DD68D9 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CC11D99B05C00DD68D9 /* ArticleViewController.swift */; };
 		5A1C3CC41D99B05C00DD68D9 /* ArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C3CC21D99B05C00DD68D9 /* ArticleViewController.xib */; };
+		5A1C3CCB1D99B32E00DD68D9 /* NasaFeed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CC91D99B32D00DD68D9 /* NasaFeed.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5A1C3CBE1D99B04E00DD68D9 /* ArticlesTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticlesTableViewController.xib; sourceTree = "<group>"; };
 		5A1C3CC11D99B05C00DD68D9 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		5A1C3CC21D99B05C00DD68D9 /* ArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleViewController.xib; sourceTree = "<group>"; };
+		5A1C3CCA1D99B32E00DD68D9 /* NasaFeed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NasaFeed.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				5A1C3CB91D99AEC800DD68D9 /* CoreDataStore.swift */,
+				5A1C3CC91D99B32D00DD68D9 /* NasaFeed.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				5A1C3CB71D99AE0D00DD68D9 /* RootViewController.swift in Sources */,
 				5A1C3CC31D99B05C00DD68D9 /* ArticleViewController.swift in Sources */,
 				5A1C3CBF1D99B04E00DD68D9 /* ArticlesTableViewController.swift in Sources */,
+				5A1C3CCB1D99B32E00DD68D9 /* NasaFeed.xcdatamodeld in Sources */,
 				5A1C3C961D99ACBE00DD68D9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +367,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5A1C3CC91D99B32D00DD68D9 /* NasaFeed.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5A1C3CCA1D99B32E00DD68D9 /* NasaFeed.xcdatamodel */,
+			);
+			currentVersion = 5A1C3CCA1D99B32E00DD68D9 /* NasaFeed.xcdatamodel */;
+			path = NasaFeed.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5A1C3C8A1D99ACBE00DD68D9 /* Project object */;
 }
