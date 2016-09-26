@@ -11,5 +11,31 @@ import CoreData
 
 
 public class Article: NSManagedObject {
+    
+    // MARK: - PUBLIC -
+    
+    public var title: String {
+        get { return self.sTitle ?? "No title" }
+        set { self.sTitle = newValue }
+    }
+    
+    public var text: String {
+        get { return self.sDescription ?? " No text" }
+        set { self.sDescription = newValue }
+    }
+    
+    public var imageUrl: String? {
+        get { return self.sImageUrl }
+        set { self.sImageUrl = newValue }
+    }
+    
+    public var date: Date {
+        get { return self.sDate as! Date }
+        set { self.sDate = newValue as NSDate }
+    }
+    
+    // MARK: - INTERNAL -
+    
+    // MARK: - PRIVATE -
 
 }

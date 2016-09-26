@@ -15,6 +15,15 @@ class NasaFeedStore: CoreDataStore {
     
     init() {
         super.init(name: "NasaFeed")
+        self.temp()
+    }
+    
+    private func temp() {
+        let article = NSEntityDescription.insertNewObject(forEntityName: "Article", into: self.persistentContainer.viewContext) as! Article
+        article.title = "Wouhou Title"
+        article.text = "Bla bla"
+        article.imageUrl = nil
+        article.date = Date()
     }
     
     // MARK: Request factory

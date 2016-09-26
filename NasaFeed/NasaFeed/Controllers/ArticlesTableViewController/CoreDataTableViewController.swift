@@ -9,6 +9,7 @@ class CoreDataTableViewController<T: NSManagedObject>: UITableViewController, NS
     init(style: UITableViewStyle, fetchedResultsController: NSFetchedResultsController<T>) {
         self.fetchedResultsController = fetchedResultsController
         super.init(style: style)
+        self.performFetch()
     }
     
     @available(*, unavailable)
