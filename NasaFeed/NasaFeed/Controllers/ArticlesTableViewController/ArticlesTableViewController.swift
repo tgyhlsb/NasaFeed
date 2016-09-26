@@ -7,20 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
-class ArticlesTableViewController: UITableViewController {
+class ArticlesTableViewController: CoreDataTableViewController<Article> {
     
     // MARK: - PUBLIC -
     
     public var delegate: ArticlesTableViewControllerDelegate?
     
-    public init() {
-        super.init(style: .plain)
-    }
-    
-    @available(*, unavailable)
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    public init(fetchedResultsController: NSFetchedResultsController<Article>) {
+        super.init(style: .plain, fetchedResultsController: fetchedResultsController)
     }
     
     // MARK: - INTERNAL -

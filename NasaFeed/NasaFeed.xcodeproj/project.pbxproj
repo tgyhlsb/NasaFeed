@@ -24,6 +24,7 @@
 		5A1C3CD21D99B60C00DD68D9 /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CD01D99B60C00DD68D9 /* Article+CoreDataProperties.swift */; };
 		5A1C3CD41D99B63A00DD68D9 /* NasaFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CD31D99B63A00DD68D9 /* NasaFeedStore.swift */; };
 		5A1C3CD61D99B6BC00DD68D9 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CD51D99B6BC00DD68D9 /* ModelManager.swift */; };
+		5A1C3CD81D99B7BD00DD68D9 /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CD71D99B7BD00DD68D9 /* CoreDataTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		5A1C3CD01D99B60C00DD68D9 /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5A1C3CD31D99B63A00DD68D9 /* NasaFeedStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaFeedStore.swift; sourceTree = "<group>"; };
 		5A1C3CD51D99B6BC00DD68D9 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		5A1C3CD71D99B7BD00DD68D9 /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			children = (
 				5A1C3CBD1D99B04E00DD68D9 /* ArticlesTableViewController.swift */,
 				5A1C3CC71D99B21500DD68D9 /* ArticlesTableViewControllerDelegate.swift */,
+				5A1C3CD71D99B7BD00DD68D9 /* CoreDataTableViewController.swift */,
 			);
 			path = ArticlesTableViewController;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1C3CD81D99B7BD00DD68D9 /* CoreDataTableViewController.swift in Sources */,
 				5A1C3CBA1D99AEC800DD68D9 /* CoreDataStore.swift in Sources */,
 				5A1C3CB71D99AE0D00DD68D9 /* RootViewController.swift in Sources */,
 				5A1C3CD41D99B63A00DD68D9 /* NasaFeedStore.swift in Sources */,
