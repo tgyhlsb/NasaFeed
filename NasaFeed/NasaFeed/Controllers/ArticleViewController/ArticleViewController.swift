@@ -13,6 +13,7 @@ class ArticleViewController: UIViewController {
     // MARK: - PUBLIC -
     
     public init(article: Article) {
+        self.article = article
         super.init(nibName: "ArticleViewController", bundle: nil)
     }
     
@@ -22,5 +23,32 @@ class ArticleViewController: UIViewController {
     // MARK: - INTERNAL -
     
     // MARK: - PRIVATE -
+    
+    private let article: Article
+    
+    // MARK: IBOutlets
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
+    
+    // MARK: View life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setView(for: self.article)
+    }
+    
+    // MARK: Appearance
+    
+    private func setView(for article: Article) {
+        self.title = article.title
+        self.textView.text = article.text
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .medium
+        self.dateLabel.text = dateFormatter.string(from: article.date)
+    }
 
 }
