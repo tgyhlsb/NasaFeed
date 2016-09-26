@@ -27,7 +27,19 @@ class ArticlesTableViewController: CoreDataTableViewController<Article> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.red
+        
+        self.tableView.registerReusableCell(ArticleTableViewCell.self)
+    }
+    
+    // MARK: UITableViewDataSource
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: ArticleTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
+        
+        let article = self.fetchedResultsController.object(at: indexPath)
+        cell.title = article.title
+        
+        return cell
     }
     
 }

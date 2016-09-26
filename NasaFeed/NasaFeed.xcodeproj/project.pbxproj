@@ -25,6 +25,9 @@
 		5A1C3CD41D99B63A00DD68D9 /* NasaFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CD31D99B63A00DD68D9 /* NasaFeedStore.swift */; };
 		5A1C3CD61D99B6BC00DD68D9 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CD51D99B6BC00DD68D9 /* ModelManager.swift */; };
 		5A1C3CD81D99B7BD00DD68D9 /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CD71D99B7BD00DD68D9 /* CoreDataTableViewController.swift */; };
+		5A1C3CDB1D99BEFF00DD68D9 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CDA1D99BEFF00DD68D9 /* ArticleTableViewCell.swift */; };
+		5A1C3CDD1D99BF2900DD68D9 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CDC1D99BF2900DD68D9 /* Reusable.swift */; };
+		5A1C3CDF1D99C0F500DD68D9 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C3CDE1D99C0F500DD68D9 /* ArticleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		5A1C3CD31D99B63A00DD68D9 /* NasaFeedStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaFeedStore.swift; sourceTree = "<group>"; };
 		5A1C3CD51D99B6BC00DD68D9 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		5A1C3CD71D99B7BD00DD68D9 /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewController.swift; sourceTree = "<group>"; };
+		5A1C3CDA1D99BEFF00DD68D9 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		5A1C3CDC1D99BF2900DD68D9 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		5A1C3CDE1D99C0F500DD68D9 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				5A1C3CC51D99B15300DD68D9 /* UIView+AutoLayout.swift */,
+				5A1C3CDC1D99BF2900DD68D9 /* Reusable.swift */,
+				5A1C3CD91D99BEEE00DD68D9 /* ArticleTableViewCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +173,15 @@
 				5A1C3CCD1D99B4EA00DD68D9 /* NavigationController.swift */,
 			);
 			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		5A1C3CD91D99BEEE00DD68D9 /* ArticleTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C3CDA1D99BEFF00DD68D9 /* ArticleTableViewCell.swift */,
+				5A1C3CDE1D99C0F500DD68D9 /* ArticleTableViewCell.xib */,
+			);
+			path = ArticleTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1C3CDF1D99C0F500DD68D9 /* ArticleTableViewCell.xib in Resources */,
 				5A1C3CB31D99ADA100DD68D9 /* LaunchScreen.storyboard in Resources */,
 				5A1C3CB81D99AE0D00DD68D9 /* RootViewController.xib in Resources */,
 				5A1C3CC41D99B05C00DD68D9 /* ArticleViewController.xib in Resources */,
@@ -251,7 +269,9 @@
 				5A1C3CD21D99B60C00DD68D9 /* Article+CoreDataProperties.swift in Sources */,
 				5A1C3CBF1D99B04E00DD68D9 /* ArticlesTableViewController.swift in Sources */,
 				5A1C3CD61D99B6BC00DD68D9 /* ModelManager.swift in Sources */,
+				5A1C3CDB1D99BEFF00DD68D9 /* ArticleTableViewCell.swift in Sources */,
 				5A1C3CCB1D99B32E00DD68D9 /* NasaFeed.xcdatamodeld in Sources */,
+				5A1C3CDD1D99BF2900DD68D9 /* Reusable.swift in Sources */,
 				5A1C3CC61D99B15300DD68D9 /* UIView+AutoLayout.swift in Sources */,
 				5A1C3CC81D99B21500DD68D9 /* ArticlesTableViewControllerDelegate.swift in Sources */,
 				5A1C3C961D99ACBE00DD68D9 /* AppDelegate.swift in Sources */,
