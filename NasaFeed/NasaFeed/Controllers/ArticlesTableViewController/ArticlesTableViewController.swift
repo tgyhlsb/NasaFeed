@@ -1,5 +1,5 @@
 //
-//  RootViewController.swift
+//  ArticlesTableViewController.swift
 //  NasaFeed
 //
 //  Created by Tanguy Hélesbeux on 26/09/2016.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class ArticlesTableViewController: UITableViewController {
     
     // MARK: - PUBLIC -
     
     // MARK: - INTERNAL -
     
     // MARK: - PRIVATE -
-
+    
 }

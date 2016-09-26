@@ -13,6 +13,10 @@
 		5A1C3CB71D99AE0D00DD68D9 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CB51D99AE0D00DD68D9 /* RootViewController.swift */; };
 		5A1C3CB81D99AE0D00DD68D9 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C3CB61D99AE0D00DD68D9 /* RootViewController.xib */; };
 		5A1C3CBA1D99AEC800DD68D9 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CB91D99AEC800DD68D9 /* CoreDataStore.swift */; };
+		5A1C3CBF1D99B04E00DD68D9 /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CBD1D99B04E00DD68D9 /* ArticlesTableViewController.swift */; };
+		5A1C3CC01D99B04E00DD68D9 /* ArticlesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C3CBE1D99B04E00DD68D9 /* ArticlesTableViewController.xib */; };
+		5A1C3CC31D99B05C00DD68D9 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CC11D99B05C00DD68D9 /* ArticleViewController.swift */; };
+		5A1C3CC41D99B05C00DD68D9 /* ArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C3CC21D99B05C00DD68D9 /* ArticleViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		5A1C3CB51D99AE0D00DD68D9 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		5A1C3CB61D99AE0D00DD68D9 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		5A1C3CB91D99AEC800DD68D9 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
+		5A1C3CBD1D99B04E00DD68D9 /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
+		5A1C3CBE1D99B04E00DD68D9 /* ArticlesTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticlesTableViewController.xib; sourceTree = "<group>"; };
+		5A1C3CC11D99B05C00DD68D9 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		5A1C3CC21D99B05C00DD68D9 /* ArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				5A1C3CB41D99ADFA00DD68D9 /* RootViewController */,
+				5A1C3CBB1D99B03A00DD68D9 /* ArticlesTableViewController */,
+				5A1C3CBC1D99B03A00DD68D9 /* ArticleViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -105,6 +115,24 @@
 				5A1C3CB61D99AE0D00DD68D9 /* RootViewController.xib */,
 			);
 			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		5A1C3CBB1D99B03A00DD68D9 /* ArticlesTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C3CBD1D99B04E00DD68D9 /* ArticlesTableViewController.swift */,
+				5A1C3CBE1D99B04E00DD68D9 /* ArticlesTableViewController.xib */,
+			);
+			path = ArticlesTableViewController;
+			sourceTree = "<group>";
+		};
+		5A1C3CBC1D99B03A00DD68D9 /* ArticleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5A1C3CC11D99B05C00DD68D9 /* ArticleViewController.swift */,
+				5A1C3CC21D99B05C00DD68D9 /* ArticleViewController.xib */,
+			);
+			path = ArticleViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +197,8 @@
 			files = (
 				5A1C3CB31D99ADA100DD68D9 /* LaunchScreen.storyboard in Resources */,
 				5A1C3CB81D99AE0D00DD68D9 /* RootViewController.xib in Resources */,
+				5A1C3CC41D99B05C00DD68D9 /* ArticleViewController.xib in Resources */,
+				5A1C3CC01D99B04E00DD68D9 /* ArticlesTableViewController.xib in Resources */,
 				5A1C3CB11D99ADA100DD68D9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +212,8 @@
 			files = (
 				5A1C3CBA1D99AEC800DD68D9 /* CoreDataStore.swift in Sources */,
 				5A1C3CB71D99AE0D00DD68D9 /* RootViewController.swift in Sources */,
+				5A1C3CC31D99B05C00DD68D9 /* ArticleViewController.swift in Sources */,
+				5A1C3CBF1D99B04E00DD68D9 /* ArticlesTableViewController.swift in Sources */,
 				5A1C3C961D99ACBE00DD68D9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
