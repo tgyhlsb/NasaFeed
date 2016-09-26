@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1230641D99CC430055708A /* BackendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1230631D99CC430055708A /* BackendManager.swift */; };
+		5A1230661D99D18E0055708A /* RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1230651D99D18E0055708A /* RssParser.swift */; };
 		5A1C3C961D99ACBE00DD68D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3C951D99ACBE00DD68D9 /* AppDelegate.swift */; };
 		5A1C3CB11D99ADA100DD68D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C3CAD1D99ADA100DD68D9 /* Assets.xcassets */; };
 		5A1C3CB31D99ADA100DD68D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C3CAF1D99ADA100DD68D9 /* LaunchScreen.storyboard */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		259B60B17F166762548B7636 /* Pods_NasaFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NasaFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A1230631D99CC430055708A /* BackendManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendManager.swift; sourceTree = "<group>"; };
+		5A1230651D99D18E0055708A /* RssParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssParser.swift; sourceTree = "<group>"; };
 		5A1C3C921D99ACBE00DD68D9 /* NasaFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasaFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1C3C951D99ACBE00DD68D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A1C3CAD1D99ADA100DD68D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 				5A1C3CCF1D99B60C00DD68D9 /* Article+CoreDataClass.swift */,
 				5A1C3CD01D99B60C00DD68D9 /* Article+CoreDataProperties.swift */,
 				5A1C3CD51D99B6BC00DD68D9 /* ModelManager.swift */,
+				5A1230631D99CC430055708A /* BackendManager.swift */,
+				5A1230651D99D18E0055708A /* RssParser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1C3CD81D99B7BD00DD68D9 /* CoreDataTableViewController.swift in Sources */,
+				5A1230641D99CC430055708A /* BackendManager.swift in Sources */,
 				5A1C3CBA1D99AEC800DD68D9 /* CoreDataStore.swift in Sources */,
 				5A1C3CB71D99AE0D00DD68D9 /* RootViewController.swift in Sources */,
 				5A1C3CD41D99B63A00DD68D9 /* NasaFeedStore.swift in Sources */,
@@ -344,6 +351,7 @@
 				5A1C3CD21D99B60C00DD68D9 /* Article+CoreDataProperties.swift in Sources */,
 				5A1C3CBF1D99B04E00DD68D9 /* ArticlesTableViewController.swift in Sources */,
 				5A1C3CD61D99B6BC00DD68D9 /* ModelManager.swift in Sources */,
+				5A1230661D99D18E0055708A /* RssParser.swift in Sources */,
 				5A1C3CDB1D99BEFF00DD68D9 /* ArticleTableViewCell.swift in Sources */,
 				5A1C3CCB1D99B32E00DD68D9 /* NasaFeed.xcdatamodeld in Sources */,
 				5A1C3CDD1D99BF2900DD68D9 /* Reusable.swift in Sources */,
