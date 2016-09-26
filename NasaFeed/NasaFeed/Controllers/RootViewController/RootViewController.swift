@@ -12,9 +12,19 @@ class RootViewController: UIViewController, ArticlesTableViewControllerDelegate 
     
     // MARK: - PUBLIC -
     
+    init(model: ModelManager) {
+        self.model = model
+        super.init(nibName: "RootViewController", bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
     // MARK: - INTERNAL -
     
     // MARK: - PRIVATE -
+    
+    private let model: ModelManager
     
     private var articlesViewController: ArticlesTableViewController!
     
@@ -29,7 +39,8 @@ class RootViewController: UIViewController, ArticlesTableViewControllerDelegate 
     // MARK: Initialization
     
     private func initializeArticlesViewController() {
-        let controller = ArticlesTableViewController()
+        let fetchedResultsController = self.model.store.fetchedResultsControllerForArticles()
+        let controller = ArticlesTableViewController(fetchedResultsController: fetchedResultsController)
         
         controller.willMove(toParentViewController: self)
         self.view.addSubview(controller.view)

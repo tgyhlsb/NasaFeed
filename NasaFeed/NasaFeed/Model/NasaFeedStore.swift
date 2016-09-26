@@ -20,7 +20,14 @@ class NasaFeedStore: CoreDataStore {
     // MARK: Request factory
     
     public func requestForArticles() -> NSFetchRequest<Article> {
-        return Article.fetchRequest()
+        let request = Article.fetchRequest() as NSFetchRequest<Article>
+        request.sortDescriptors = [NSSortDescriptor(key: "sDate", ascending: false)]
+        return request
+    }
+    
+    public func fetchedResultsControllerForArticles() -> NSFetchedResultsController<Article> {
+        let controller = NSFetchedResultsController(fetchRequest: self.requestForArticles(), managedObjectContext: self.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: "allArticles")
+        return controller
     }
     
     // MARK: - INTERNAL -
