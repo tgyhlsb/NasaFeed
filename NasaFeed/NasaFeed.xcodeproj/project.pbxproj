@@ -13,6 +13,7 @@
 		5A1C3CB31D99ADA100DD68D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C3CAF1D99ADA100DD68D9 /* LaunchScreen.storyboard */; };
 		5A1C3CB71D99AE0D00DD68D9 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CB51D99AE0D00DD68D9 /* RootViewController.swift */; };
 		5A1C3CB81D99AE0D00DD68D9 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1C3CB61D99AE0D00DD68D9 /* RootViewController.xib */; };
+		5A1C3CBA1D99AEC800DD68D9 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C3CB91D99AEC800DD68D9 /* CoreDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		5A1C3CAF1D99ADA100DD68D9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A1C3CB51D99AE0D00DD68D9 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		5A1C3CB61D99AE0D00DD68D9 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		5A1C3CB91D99AEC800DD68D9 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		5A1C3CAB1D99ADA100DD68D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5A1C3CB91D99AEC800DD68D9 /* CoreDataStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1C3CBA1D99AEC800DD68D9 /* CoreDataStore.swift in Sources */,
 				5A1C3CB71D99AE0D00DD68D9 /* RootViewController.swift in Sources */,
 				5A1C3C961D99ACBE00DD68D9 /* AppDelegate.swift in Sources */,
 			);
