@@ -18,6 +18,7 @@ class RssParser: NSObject, XMLParserDelegate {
         var formattedDate: Date? {
             guard let string = self.date else { return nil }
             let formatter = DateFormatter()
+            formatter.dateFormat = "EEE',' dd MMM yyyy HH:mm 'EDT'"
             return formatter.date(from: string)
         }
     }
