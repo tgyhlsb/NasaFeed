@@ -463,7 +463,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D10C18EB8127B0C989C4D896 /* Pods-NasaFeed.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FNQ99T6S6G;
@@ -479,7 +478,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DDD753219E35C0ECF6934931 /* Pods-NasaFeed.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FNQ99T6S6G;
