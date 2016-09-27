@@ -24,14 +24,19 @@ public class Article: NSManagedObject {
         set { self.sDescription = newValue }
     }
     
+    public var date: Date {
+        get { return self.sDate as! Date }
+        set { self.sDate = newValue as NSDate }
+    }
+    
     public var imageUrl: String? {
         get { return self.sImageUrl }
         set { self.sImageUrl = newValue }
     }
     
-    public var date: Date {
-        get { return self.sDate as! Date }
-        set { self.sDate = newValue as NSDate }
+    public var image: Data? {
+        get { return self.bImage as Data? }
+        set { self.bImage = newValue as NSData? }
     }
     
     // MARK: - INTERNAL -

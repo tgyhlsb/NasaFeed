@@ -14,7 +14,7 @@ class ModelManager {
     
     public let store = NasaFeedStore()
     
-    public func loadFeed(completion: @escaping BackendManager.ResultBlock) {
+    public func loadFeed(completion: @escaping BackendManager.FeedResultBlock) {
         self.backend.loadFeed(url: ModelManager.feedUrl) { (result) in
             switch result {
             case .success(let data):
@@ -34,6 +34,8 @@ class ModelManager {
     
     private let backend = BackendManager()
     
+    private var newArticles = [Article]()
+    
     private func createArticles(from data: [RssParser.Item]) {
         for info in data {
             let article = self.store.createArticle()
@@ -41,6 +43,26 @@ class ModelManager {
             article.text = info.text ?? "No text"
             article.date = info.formattedDate ?? Date()
             article.imageUrl = info.image
+            self.newArticles.append(article)
+        }
+        self.fetchImageForNewArticles()
+    }
+    
+    
+    // Will fetch images one by one, instead of all at once
+    private func fetchImageForNewArticles() {
+        guard !self.newArticles.isEmpty else { return }
+        let article = self.newArticles.removeFirst()
+        self.fetchImage(for: article)
+    }
+    
+    // Uses recursive calls with `fetchImageForNewArticles`
+    private func fetchImage(for article: Article) {
+        guard let url = article.imageUrl else {
+            return self.fetchImageForNewArticles()
+        }
+        self.backend.loadImage(url: url) { 
+            self.fetchImageForNewArticles()
         }
     }
 
