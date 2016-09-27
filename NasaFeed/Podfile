@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'NasaFeed' do
     pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :tag => '4.0.0'
+    pod 'AlamofireImage', :git => 'https://github.com/Alamofire/AlamofireImage.git', :tag => '3.0.0'
 end

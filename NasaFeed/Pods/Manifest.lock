@@ -1,22 +1,32 @@
 PODS:
   - Alamofire (4.0.0)
+  - AlamofireImage (3.0.0):
+    - Alamofire (~> 4.0)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, tag `4.0.0`)
+  - AlamofireImage (from `https://github.com/Alamofire/AlamofireImage.git`, tag `3.0.0`)
 
 EXTERNAL SOURCES:
   Alamofire:
     :git: https://github.com/Alamofire/Alamofire.git
     :tag: 4.0.0
+  AlamofireImage:
+    :git: https://github.com/Alamofire/AlamofireImage.git
+    :tag: 3.0.0
 
 CHECKOUT OPTIONS:
   Alamofire:
     :git: https://github.com/Alamofire/Alamofire.git
     :tag: 4.0.0
+  AlamofireImage:
+    :git: https://github.com/Alamofire/AlamofireImage.git
+    :tag: 3.0.0
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  AlamofireImage: 6594aa1139a67dcd36cde6da79ea4e5b318e60fb
 
-PODFILE CHECKSUM: 7a8b4ea76df717f08d191f5407d2ea15929efbe5
+PODFILE CHECKSUM: 40fa4c2444b01c81a90800153f46300d3a566638
 
 COCOAPODS: 1.1.0.rc.2
