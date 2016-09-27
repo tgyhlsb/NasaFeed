@@ -12,13 +12,23 @@ class RssParser: NSObject, XMLParserDelegate {
     
     // MARK: - PUBLIC -
     
+    public struct Item {
+        var title, text, date, image: String?
+        
+        var formattedDate: Date? {
+            guard let string = self.date else { return nil }
+            let formatter = DateFormatter()
+            return formatter.date(from: string)
+        }
+    }
+    
     public func parse(data: Data) {
         let parser = XMLParser(data: data)
         parser.delegate = self
         parser.parse()
     }
     
-    public var elements = [[String: String?]]()
+    public var items = [Item]()
     
     // MARK: - INTERNAL -
     
@@ -56,13 +66,12 @@ class RssParser: NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "item" {
-            let element = [
-                "title": self.formatText(self.title),
-                "text": self.formatText(self.text),
-                "date": self.formatText(self.date),
-                "image": self.formatText(self.image)
-            ]
-            self.elements.append(element)
+            var item = Item()
+            item.title = self.format(string: self.title)
+            item.text = self.format(string: self.text)
+            item.date = self.format(string: self.date)
+            item.image = self.format(string: self.image)
+            self.items.append(item)
             
             self.title = nil
             self.text = nil
@@ -71,7 +80,7 @@ class RssParser: NSObject, XMLParserDelegate {
         }
      }
 
-    private func formatText(_ text: String?) -> String? {
+    private func format(string: String?) -> String? {
         return text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
 }

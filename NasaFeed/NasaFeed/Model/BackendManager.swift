@@ -14,7 +14,7 @@ class BackendManager {
     // MARK: - PUBLIC -
     
     enum Result {
-        case success
+        case success(data: [RssParser.Item])
         case failure(message: String)
     }
     
@@ -34,19 +34,16 @@ class BackendManager {
     private func handleFeedResponse(_ response: DataResponse<Data>) -> Result {
         switch response.result {
         case .success(let data):
-            self.parseFeedData(data)
-            return .success
+            return .success(data: self.parseFeedData(data))
         case .failure(let error):
             return .failure(message: error.localizedDescription)
         }
     }
     
-    private func parseFeedData(_ data: Data) {
+    private func parseFeedData(_ data: Data) -> [RssParser.Item] {
         let parser = RssParser()
         parser.parse(data: data)
-        print(parser.elements)
+        return parser.items
     }
-    
-    
     
 }
