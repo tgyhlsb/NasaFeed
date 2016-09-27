@@ -57,10 +57,10 @@ class RssParser: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "item" {
             let element = [
-                "title": self.title,
-                "text": self.description,
-                "date": self.date,
-                "image": self.image
+                "title": self.formatText(self.title),
+                "text": self.formatText(self.text),
+                "date": self.formatText(self.date),
+                "image": self.formatText(self.image)
             ]
             self.elements.append(element)
             
@@ -71,5 +71,7 @@ class RssParser: NSObject, XMLParserDelegate {
         }
      }
 
-
+    private func formatText(_ text: String?) -> String? {
+        return text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    }
 }
