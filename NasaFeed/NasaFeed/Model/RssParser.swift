@@ -45,7 +45,6 @@ class RssParser: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
         self.currentElement = elementName
-        print(attributeDict)
         if elementName == "item" {
             self.title = ""
             self.text = ""
