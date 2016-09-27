@@ -10,6 +10,7 @@ class CoreDataTableViewController<T: NSManagedObject>: UITableViewController, NS
         self.fetchedResultsController = fetchedResultsController
         super.init(style: style)
         self.performFetch()
+        self.fetchedResultsController.delegate = self
     }
     
     @available(*, unavailable)
