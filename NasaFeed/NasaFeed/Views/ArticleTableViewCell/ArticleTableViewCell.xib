@@ -21,16 +21,26 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAH-nD-acM">
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Zjt-tI-YOB" firstAttribute="centerY" secondItem="IPL-Uj-eUL" secondAttribute="centerY" id="WZN-sp-ANy"/>
+                    <constraint firstItem="Zjt-tI-YOB" firstAttribute="trailing" secondItem="IPL-Uj-eUL" secondAttribute="trailingMargin" id="7C4-AG-auu"/>
+                    <constraint firstItem="sAH-nD-acM" firstAttribute="leading" secondItem="Zjt-tI-YOB" secondAttribute="leading" id="8A7-dv-xa1"/>
+                    <constraint firstItem="sAH-nD-acM" firstAttribute="top" secondItem="Zjt-tI-YOB" secondAttribute="bottom" id="Q9J-LH-AGn"/>
+                    <constraint firstItem="Zjt-tI-YOB" firstAttribute="centerY" secondItem="IPL-Uj-eUL" secondAttribute="centerY" constant="-8" id="WZN-sp-ANy"/>
                     <constraint firstItem="Zjt-tI-YOB" firstAttribute="leading" secondItem="IPL-Uj-eUL" secondAttribute="leadingMargin" id="bbz-bi-2ep"/>
+                    <constraint firstItem="sAH-nD-acM" firstAttribute="trailing" secondItem="Zjt-tI-YOB" secondAttribute="trailing" id="hOv-VG-ilb"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="subtitleLabel" destination="sAH-nD-acM" id="JKD-UY-gEb"/>
                 <outlet property="titleLabel" destination="Zjt-tI-YOB" id="sQv-Ho-PXL"/>
             </connections>
-            <point key="canvasLocation" x="-18" y="27"/>
+            <point key="canvasLocation" x="-18.5" y="27"/>
         </tableViewCell>
     </objects>
 </document>
