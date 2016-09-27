@@ -61,7 +61,13 @@ class ModelManager {
         guard let url = article.imageUrl else {
             return self.fetchImageForNewArticles()
         }
-        self.backend.loadImage(url: url) { 
+        self.backend.loadImage(url: url) { result in
+            switch result {
+            case .success(let data):
+                article.image = data
+            case .failure(let message):
+                NSLog(message as! String)
+            }
             self.fetchImageForNewArticles()
         }
     }

@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import AlamofireImage
+import UIKit
 
 enum Resul<T> {
     case success(data: T)
@@ -29,21 +30,13 @@ class BackendManager {
         }
     }
     
-    typealias ImageResult = Result<UIImage>
+    typealias ImageResult = Result<Data>
     typealias ImageResultBlock = (_ result: ImageResult) -> Void
     
-    public func loadImage(url: String, completion: @escaping () -> Void) {
+    public func loadImage(url: String, completion: @escaping ImageResultBlock) {
         Alamofire.request(url).responseImage { response in
-            debugPrint(response)
-            
-            print(response.request)
-            print(response.response)
-            debugPrint(response.result)
-            
-            if let image = response.result.value {
-                print("image downloaded: \(image)")
-            }
-            completion()
+            let result = self.handleImageResponse(response)
+            completion(result)
         }
     }
     
@@ -54,9 +47,9 @@ class BackendManager {
     private func handleFeedResponse(_ response: DataResponse<Data>) -> FeedResult {
         switch response.result {
         case .success(let data):
-            return .success(self.parseFeedData(data))
+            return FeedResult.success(self.parseFeedData(data))
         case .failure(let error):
-            return .failure(error.localizedDescription as! Error)
+            return FeedResult.failure(error.localizedDescription as! Error)
         }
     }
     
@@ -64,6 +57,15 @@ class BackendManager {
         let parser = RssParser()
         parser.parse(data: data)
         return parser.items
+    }
+    
+    private func handleImageResponse(_ response: DataResponse<UIImage>) -> ImageResult {
+        switch response.result {
+        case .success(let image):
+            return ImageResult.success(UIImagePNGRepresentation(image)!)
+        case .failure(let error):
+            return ImageResult.failure(error.localizedDescription as! Error)
+        }
     }
     
 }

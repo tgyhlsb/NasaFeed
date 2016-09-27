@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,18 +27,28 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n15-LK-d1u">
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="n15-LK-d1u" secondAttribute="height" multiplier="1:1" id="LPy-dS-fdM"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="n15-LK-d1u" firstAttribute="top" secondItem="IPL-Uj-eUL" secondAttribute="top" constant="4" id="2be-Fp-IU1"/>
                     <constraint firstItem="Zjt-tI-YOB" firstAttribute="trailing" secondItem="IPL-Uj-eUL" secondAttribute="trailingMargin" id="7C4-AG-auu"/>
                     <constraint firstItem="sAH-nD-acM" firstAttribute="leading" secondItem="Zjt-tI-YOB" secondAttribute="leading" id="8A7-dv-xa1"/>
                     <constraint firstItem="sAH-nD-acM" firstAttribute="top" secondItem="Zjt-tI-YOB" secondAttribute="bottom" id="Q9J-LH-AGn"/>
                     <constraint firstItem="Zjt-tI-YOB" firstAttribute="centerY" secondItem="IPL-Uj-eUL" secondAttribute="centerY" constant="-8" id="WZN-sp-ANy"/>
-                    <constraint firstItem="Zjt-tI-YOB" firstAttribute="leading" secondItem="IPL-Uj-eUL" secondAttribute="leadingMargin" id="bbz-bi-2ep"/>
+                    <constraint firstItem="n15-LK-d1u" firstAttribute="leading" secondItem="IPL-Uj-eUL" secondAttribute="leading" constant="4" id="hCS-sA-1QO"/>
                     <constraint firstItem="sAH-nD-acM" firstAttribute="trailing" secondItem="Zjt-tI-YOB" secondAttribute="trailing" id="hOv-VG-ilb"/>
+                    <constraint firstAttribute="bottom" secondItem="n15-LK-d1u" secondAttribute="bottom" constant="4" id="hgZ-M0-jsd"/>
+                    <constraint firstItem="Zjt-tI-YOB" firstAttribute="leading" secondItem="n15-LK-d1u" secondAttribute="trailing" constant="8" id="kun-Bw-qUb"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="subtitleLabel" destination="sAH-nD-acM" id="JKD-UY-gEb"/>
+                <outlet property="thumbnailView" destination="n15-LK-d1u" id="qgS-vc-eL9"/>
                 <outlet property="titleLabel" destination="Zjt-tI-YOB" id="sQv-Ho-PXL"/>
             </connections>
             <point key="canvasLocation" x="-18.5" y="27"/>

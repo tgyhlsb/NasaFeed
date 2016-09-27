@@ -39,6 +39,7 @@ class ArticlesTableViewController: CoreDataTableViewController<Article> {
         let article = self.fetchedResultsController.object(at: indexPath)
         cell.title = article.title
         cell.date = article.date
+        cell.thumbnail = article.image == nil ? nil : UIImage(data: article.image!)
         
         return cell
     }

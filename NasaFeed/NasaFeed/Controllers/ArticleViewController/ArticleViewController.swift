@@ -45,6 +45,10 @@ class ArticleViewController: UIViewController {
         self.title = article.title
         self.textView.text = article.text
         
+        if let imageData = article.image {
+            self.imageView.image = UIImage(data: imageData)
+        }
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .medium

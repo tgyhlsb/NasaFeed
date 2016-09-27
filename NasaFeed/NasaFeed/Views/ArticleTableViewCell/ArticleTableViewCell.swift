@@ -23,6 +23,11 @@ class ArticleTableViewCell: UITableViewCell, Reusable {
         }
     }
     
+    public var thumbnail: UIImage? {
+        get { return self.thumbnailView.image }
+        set { self.thumbnailView.image = newValue }
+    }
+    
     // MARK: - INTERNAL -
     
     // MARK: - PRIVATE -
@@ -31,6 +36,12 @@ class ArticleTableViewCell: UITableViewCell, Reusable {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var thumbnailView: UIImageView!
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.thumbnailView.layer.cornerRadius = self.thumbnailView.layer.frame.size.height / 2.00
+    }
     
     private func string(from date: Date) -> String {
         let formatter = DateFormatter()
