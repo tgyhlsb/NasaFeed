@@ -39,6 +39,11 @@ public class Article: NSManagedObject {
         set { self.bImage = newValue as NSData? }
     }
     
+    public var thumbnail: Data? {
+        get { return self.bThumbnail as Data? }
+        set { self.bThumbnail = newValue as NSData? }
+    }
+    
     // MARK: - INTERNAL -
     
     // MARK: - PRIVATE -

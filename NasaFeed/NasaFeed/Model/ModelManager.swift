@@ -64,7 +64,8 @@ class ModelManager {
         self.backend.loadImage(url: url) { result in
             switch result {
             case .success(let data):
-                article.image = data
+                article.image = data.image
+                article.thumbnail = data.thumbnail
             case .failure(let message):
                 NSLog(message as! String)
             }

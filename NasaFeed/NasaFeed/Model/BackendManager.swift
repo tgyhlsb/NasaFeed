@@ -20,6 +20,8 @@ class BackendManager {
 
     // MARK: - PUBLIC -
     
+    public var thumbnailSize = CGSize(width: 50, height: 50)
+    
     typealias FeedResult = Result<[RssParser.Item]>
     typealias FeedResultBlock = (_ result: FeedResult) -> Void
     
@@ -30,7 +32,7 @@ class BackendManager {
         }
     }
     
-    typealias ImageResult = Result<Data>
+    typealias ImageResult = Result<(image: Data, thumbnail: Data)>
     typealias ImageResultBlock = (_ result: ImageResult) -> Void
     
     public func loadImage(url: String, completion: @escaping ImageResultBlock) {
@@ -62,7 +64,10 @@ class BackendManager {
     private func handleImageResponse(_ response: DataResponse<UIImage>) -> ImageResult {
         switch response.result {
         case .success(let image):
-            return ImageResult.success(UIImagePNGRepresentation(image)!)
+            let imageData = UIImagePNGRepresentation(image)!
+            let thumbnail = image.af_imageAspectScaled(toFill: self.thumbnailSize)
+            let thumbnailData = UIImagePNGRepresentation(thumbnail)!
+            return ImageResult.success((image: imageData, thumbnail: thumbnailData))
         case .failure(let error):
             return ImageResult.failure(error.localizedDescription as! Error)
         }
