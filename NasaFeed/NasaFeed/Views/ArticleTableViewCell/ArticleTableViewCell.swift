@@ -17,6 +17,12 @@ class ArticleTableViewCell: UITableViewCell, Reusable {
         set { self.titleLabel.text = newValue }
     }
     
+    public var date: Date = Date() {
+        didSet {
+            self.subtitleLabel.text = self.string(from: self.date)
+        }
+    }
+    
     // MARK: - INTERNAL -
     
     // MARK: - PRIVATE -
@@ -24,5 +30,13 @@ class ArticleTableViewCell: UITableViewCell, Reusable {
     // MARK: IBOutlets
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    
+    private func string(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter.string(from: self.date)
+    }
     
 }
